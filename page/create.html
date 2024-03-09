@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create User</title>
+    <style>
+        /* Global styling for the entire page */
+        body {
+            font-family: Arial, sans-serif; 
+            background-color: #f0f0f0; 
+            color: #333; 
+        }
+
+        /* Styling for the form */
+        form {
+            margin-top: 20px; 
+        }
+    </style>
+</head>
+<body>
+    <h1>Create User</h1> 
+
+    <!-- User creation form -->
+    <form action="/add" method="POST">
+        <!-- Text input for user name with a placeholder and required attribute -->
+        <input type="text" name="userName" placeholder="Enter user name" required>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

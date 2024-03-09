@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>Users</title>
     <style>
+        /* Basic styling for the body */
         body {
             font-family: Arial, sans-serif;
             background-color: #f0f0f0;
@@ -12,17 +12,20 @@
             padding: 20px;
         }
 
+        /* Styling for the heading */
         h1 {
             font-size: 24px;
             margin-bottom: 10px;
         }
 
+        /* Removing default styling for the list */
         ul {
             list-style-type: none;
             padding: 0;
             margin: 0;
         }
 
+        /* Styling for each list item */
         li {
             padding: 10px;
             border-bottom: 1px solid #ddd;
@@ -30,22 +33,27 @@
             justify-content: space-between;
         }
 
+        /* Removing the border for the last list item */
         li:last-child {
-            border-bottom: none;/
+            border-bottom: none;
         }
     </style>
 </head>
 
 <body>
     <h1>Users</h1>
+    <!-- List where the users will be displayed -->
     <ul id="users-list">
         <li>Shaktimaan</li>
     </ul>
     <script>
+        /* Fetching the users data from the server */
         fetch('/users/data')
             .then(response => response.json())
             .then(users => {
+                /* Getting the list element */
                 const usersList = document.getElementById('users-list');
+                /* Creating a new list item for each user and appending it to the list */
                 users.forEach(user => {
                     const li = document.createElement('li');
                     li.textContent = user;
@@ -54,5 +62,4 @@
             });
     </script>
 </body>
-
 </html>
