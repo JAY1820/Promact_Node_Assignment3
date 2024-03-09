@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Users</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        li:last-child {
+            border-bottom: none;/
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Users</h1>
+    <ul id="users-list">
+        <li>Shaktimaan</li>
+    </ul>
+    <script>
+        fetch('/users/data')
+            .then(response => response.json())
+            .then(users => {
+                const usersList = document.getElementById('users-list');
+                users.forEach(user => {
+                    const li = document.createElement('li');
+                    li.textContent = user;
+                    usersList.appendChild(li);
+                });
+            });
+    </script>
+</body>
+
+</html>
